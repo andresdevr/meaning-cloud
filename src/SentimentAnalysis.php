@@ -1,8 +1,8 @@
 <?php
 
-namespace Andresdevr\SentimentAnalysisMeaningCloud;
+namespace Andresdevr\MeaningCloud;
 
-class MeaningCloud
+class SentimentAnalysis
 {
     private $key;
 
@@ -13,6 +13,6 @@ class MeaningCloud
 
     public function getAnalysis()
     {
-    
+        return "hello";
     }
 }

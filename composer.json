@@ -1,5 +1,5 @@
 {
-    "name": "andresdevr/sentiment-analysis-meaning-cloud",
+    "name": "andresdevr/meaning-cloud",
     "description": "this package provides tools to use the meaningcloud api with laravel",
     "license": "MIT",
     "authors": [
@@ -11,7 +11,20 @@
     "require": {},
     "autoload": {
         "psr-4": {
-             "Andresdevr\\SentimentAnalysisMeaningCloud\\": "src/"
+             "Andresdevr\\MeaningCloud\\": "src/"
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Andresdevr\\MeaningCloud\\MeaningCloudServiceProvider"
+            ],
+            "aliases": {
+                "SentimentAnalysis": "Andresdevr\\MeaningCloud\\Facades\\SentimentAnalysis"
+            }
         }
     }
 }
