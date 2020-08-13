@@ -1,0 +1,12 @@
+{
+    "name": "andresdevr/sentiment-analysis-meaning-cloud",
+    "description": "this package provides tools to use the meaningcloud api with laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "andresdevr",
+            "email": "andres22.dev@gmail.com"
+        }
+    ],
+    "require": {}
+}
