@@ -11,4 +11,9 @@ class MeaningCloud
     {
         $this->key = config('meaning-cloud.key');
     }
+
+    public function setKey($key)
+    {
+        $this->key = $key;
+    }
 }
