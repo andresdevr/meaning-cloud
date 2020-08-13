@@ -70,7 +70,7 @@ class SentimentAnalysis extends MeaningCloud
 
     public function getAnalysis($text)
     {
-        $this->response = Http::post($this->endpoint, [
+        $params = [
             'key' => $this->key,
             'of' => $this->outputFormat,
             'lang' => $this->lang,
@@ -80,8 +80,10 @@ class SentimentAnalysis extends MeaningCloud
             'txtf' => $this->txtf,
             'model' => $this->model,
             'egp' => $this->egp
-        ]);
+        ];
 
-        return $this->response->body();
+        $this->response = Http::post($this->endpoint, $params);
+
+        return $this;
     }
 }
