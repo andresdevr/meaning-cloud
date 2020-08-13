@@ -13,7 +13,18 @@
 */
 return [
 
+    /*
+    |--------------------------------------------------------------------------
+    | Sentiment Analysis Route
+    |--------------------------------------------------------------------------
+    |
+    | This is the route where sentiment analysis make the request
+    |
+    */
 
+    "endpoint" => env('MD_SA_ENDPOINT', 'sentiment-2.1'),
+    
+    
     /*
     |--------------------------------------------------------------------------
     | Output Format

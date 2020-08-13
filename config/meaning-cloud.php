@@ -16,4 +16,16 @@ return [
 
     "key" => env('MD_KEY', 'not meaning cloud key defined'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Api Endpoint
+    |--------------------------------------------------------------------------
+    |
+    | this is the url to make the request, if Meaning cloud
+    | change the version, you can personalize that endpoint
+    |
+    */
+
+    "url" => env('MC_ENDPOINT', 'https://api.meaningcloud.com/')
+
 ];
