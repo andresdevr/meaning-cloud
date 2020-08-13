@@ -8,6 +8,6 @@ class MeaningCloud
 
     public function __construct()
     {
-        $this->key = $key;
+        $this->key = config('meaning-cloud.key');
     }
 }

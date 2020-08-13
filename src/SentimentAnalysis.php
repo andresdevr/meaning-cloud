@@ -2,11 +2,13 @@
 
 namespace Andresdevr\MeaningCloud;
 
-class SentimentAnalysis
+use Illuminate\Support\Facades\Http;
+
+class SentimentAnalysis extends MeaningCloud
 {
 
-    public function getAnalysis()
+    public function getAnalysis($text)
     {
-        return "hello";
+        $response = Http::post('https://api.meaningcloud.com/sentiment-2.1');
     }
 }
