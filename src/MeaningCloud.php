@@ -2,40 +2,29 @@
 
 namespace Andresdevr\MeaningCloud;
 
+
 class MeaningCloud
 {
     protected $key;
     protected $endpoint;
     protected $response;
+    protected $data;
 
     public function __construct()
     {
         $this->key = config('meaning-cloud.key');
     }
 
-    public function setKey($key)
+    protected function setData($data)
     {
-        $this->key = $key;
+        $data = json_decode($data);
+        $this->data = collect($data)->recursive();
     }
 
-    public function status()
+    public function getData()
     {
-        return $this->response->status();
+        return $this->data;
     }
 
-    public function body()
-    {
-        return $this->response->body();
-    }
-
-    public function json()
-    {
-        return $this->response->json();
-    }
-
-    public function header()
-    {
-        return $this->response->header();
-    }
 
 }

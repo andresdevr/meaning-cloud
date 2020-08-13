@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Http;
 
 class SentimentAnalysis extends MeaningCloud
 {
-    public $response;
-
+    public $data;
 
     protected $endpoint;
     protected $outputFormat;
@@ -83,7 +82,10 @@ class SentimentAnalysis extends MeaningCloud
         ];
 
         $this->response = Http::post($this->endpoint, $params);
+        $this->setData($this->response->body());
 
         return $this;
     }
+
+    
 }
