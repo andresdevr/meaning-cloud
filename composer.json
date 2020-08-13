@@ -8,5 +8,10 @@
             "email": "andres22.dev@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+             "Andresdevr\\SentimentAnalysisMeaningCloud\\": "src/"
+        }
+    }
 }
