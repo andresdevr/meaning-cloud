@@ -87,5 +87,61 @@ class SentimentAnalysis extends MeaningCloud
         return $this;
     }
 
+    public function status()
+    {
+        return $this->getData()['status'];
+    }
+
+    public function model()
+    {
+        return $this->getData()['model'];
+    }
+
+    public function score()
+    {
+        return $this->getData()['score_tag'];
+    }
+
+    public function agreement()
+    {
+        if ($this->getData()['agreement'] == 'AGREEMENT')
+            return true;
+        return false; 
+    }
+
+    public function subjectivity()
+    {
+        if($this->getData()['subjectivity'] == 'SUBJECTIVE')
+            return true;
+        return false;
+    }
+
+    public function confidence()
+    {
+        return (int)$this->getData()['confidence'];
+    }
+
+    public function ironic()
+    {
+        if($this->getData()['irony'] == 'IRONIC')
+            return true;
+        return false;
+    }
+
+    public function sentences()
+    {
+        return $this->getData()['sentence_list'];
+    }
+
+    public function sentimentedEntities()
+    {
+        return $this->getData()['sentimented_entity_list'];
+    }
+
+    public function sentimentedConcepts()
+    {
+        return $this->getData()['sentimented_concept_list'];
+    }
+
     
 }
