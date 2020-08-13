@@ -3,6 +3,9 @@
 namespace Andresdevr\MeaningCloud;
 
 
+use Illuminate\Support\Collection;
+
+
 class MeaningCloud
 {
     protected $key;
@@ -18,7 +21,15 @@ class MeaningCloud
     protected function setData($data)
     {
         $data = json_decode($data);
-        $this->data = collect($data)->recursive();
+        $data = collect($data);
+
+        $this->data = $data->map(function ($value) {
+            if (is_array($value) || is_object($value)) {
+                return collect($value)->recursive();
+            }
+    
+            return $value;
+        });
     }
 
     public function getData()
