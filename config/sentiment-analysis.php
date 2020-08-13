@@ -38,7 +38,7 @@ return [
     |
     */  
 
-    "output-format" => env('MD_OUTPUT_FORMAT', 'json'),
+    "output-format" => env('MC_OUTPUT_FORMAT', 'json'),
 
 
     /*
@@ -55,7 +55,7 @@ return [
     |
     */
 
-    "lang" => env('MD_LANG', 'auto'),
+    "lang" => env('MC_LANG', 'auto'),
 
 
     /*
@@ -71,7 +71,7 @@ return [
     |                    "da", "sv", "no", "fi" 
     */
 
-    "ilang" => env('MD_ILANG'),
+    "ilang" => env('MC_ILANG', 'en'),
 
 
     /*
@@ -89,7 +89,7 @@ return [
     |
     */
 
-    "verbose" => env('MD_VERBOSE', 'n'),
+    "verbose" => env('MC_VERBOSE', 'n'),
 
 
     /*
@@ -106,7 +106,7 @@ return [
     |
     */
 
-    "txtf" => env('MD_TXT_FORMAT', 'plain'),
+    "txtf" => env('MC_TXT_FORMAT', 'plain'),
 
 
     /*
@@ -118,7 +118,7 @@ return [
     |
     */
 
-    "model" => env('MD_MODEL', 'general'),
+    "model" => env('MC_MODEL', 'general'),
 
 
     /*

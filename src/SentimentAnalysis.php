@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\Http;
 
 class SentimentAnalysis extends MeaningCloud
 {
-    
+    public $response;
+
+
+    protected $endpoint;
     protected $outputFormat;
     protected $lang;
     protected $ilang;
@@ -19,9 +22,9 @@ class SentimentAnalysis extends MeaningCloud
     {
         parent::__construct();
         $this->endpoint = config('meaning-cloud.url') . config('sentiment-analysis.endpoint');
-        $this->outputFormat = config('sentiment-analysis.output_format');
+        $this->outputFormat = config('sentiment-analysis.output-format');
         $this->lang = config('sentiment-analysis.lang');
-        $this->ilang = config('sentiment-analysis.ilang', $this->lang);
+        $this->ilang = config('sentiment-analysis.ilang');
         $this->verbose = config('sentiment-analysis.verbose');
         $this->txtf = config('sentiment-analysis.txtf');
         $this->model = config('sentiment-analysis.model');
@@ -67,6 +70,18 @@ class SentimentAnalysis extends MeaningCloud
 
     public function getAnalysis($text)
     {
-        $response = Http::post();
+        $this->response = Http::post($this->endpoint, [
+            'key' => $this->key,
+            'of' => $this->outputFormat,
+            'lang' => $this->lang,
+            'ilang' => $this->ilang,
+            'verbose' => $this->verbose,
+            'txt' => $text,
+            'txtf' => $this->txtf,
+            'model' => $this->model,
+            'egp' => $this->egp
+        ]);
+
+        return $this->response->body();
     }
 }

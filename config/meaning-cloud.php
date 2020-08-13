@@ -14,7 +14,7 @@ return [
     |
     */
 
-    "key" => env('MD_KEY', 'not meaning cloud key defined'),
+    "key" => env('MC_KEY', 'not meaning cloud key defined'),
 
     /*
     |--------------------------------------------------------------------------
