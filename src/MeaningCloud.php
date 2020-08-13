@@ -21,15 +21,7 @@ class MeaningCloud
     protected function setData($data)
     {
         $data = json_decode($data);
-        $data = collect($data);
-
-        $this->data = $data->map(function ($value) {
-            if (is_array($value) || is_object($value)) {
-                return collect($value)->recursive();
-            }
-    
-            return $value;
-        });
+        $this->data = collect($data)->recursive();
     }
 
     public function getData()
