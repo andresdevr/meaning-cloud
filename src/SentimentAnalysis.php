@@ -92,6 +92,16 @@ class SentimentAnalysis extends MeaningCloud
         return $this->getData()['status'];
     }
 
+    public function statusCode()
+    {
+        return $this->getData()['status']['code'];
+    }
+
+    public function statusMsg()
+    {
+        return $this->getData()['status']['msg'];
+    }
+
     public function model()
     {
         return $this->getData()['model'];
